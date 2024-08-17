@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4Digits Betting Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .betting-form {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border-radius: 5px;
+        }
+        .digit-select {
+            display: inline-block;
+            margin: 10px;
+        }
+        select {
+            font-size: 18px;
+            padding: 5px;
+        }
+        button {
+            display: block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result, #confirmation {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #confirmationBox {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #selectedNumber {
+            font-size: 24px;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>4Digits Betting Form</h1>
+    <div class="betting-form">
+        <form id="bettingForm">
+            <div class="digit-select">
+                <label for="digit1">1st Digit:</label>
+                <select id="digit1" name="digit1">
+                    <option value="">Select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </div>
+            <div class="digit-select">
+                <label for="digit2">2nd Digit:</label>
+                <select id="digit2" name="digit2">
+                    <option value="">Select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </div>
+            <div class="digit-select">
+                <label for="digit3">3rd Digit:</label>
+                <select id="digit3" name="digit3">
+                    <option value="">Select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </div>
+            <div class="digit-select">
+                <label for="digit4">4th Digit:</label>
+                <select id="digit4" name="digit4">
+                    <option value="">Select</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                </select>
+            </div>
+            <button type="button" onclick="showConfirmation()">Confirm Numbers</button>
+        </form>
+        <div id="confirmationBox">
+            <div id="selectedNumber"></div>
+            <label for="betAmount">Bet Amount:</label>
+            <input type="number" id="betAmount" min="1" step="1" required>
+            <button onclick="placeBet()">PLACE BET</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function showConfirmation() {
+            var digit1 = document.getElementById("digit1").value;
+            var digit2 = document.getElementById("digit2").value;
+            var digit3 = document.getElementById("digit3").value;
+            var digit4 = document.getElementById("digit4").value;
+
+            if (digit1 === "" || digit2 === "" || digit3 === "" || digit4 === "") {
+                alert("Please select all four digits!");
+                return;
+            }
+
+            var selectedNumbers = digit1 + digit2 + digit3 + digit4;
+            document.getElementById("selectedNumber").innerHTML = "Selected Number: " + selectedNumbers;
+            document.getElementById("confirmationBox").style.display = "block";
+        }
+
+        function placeBet() {
+            var selectedNumbers = document.getElementById("selectedNumber").innerHTML.split(": ")[1];
+            var betAmount = document.getElementById("betAmount").value;
+
+            if (isNaN(betAmount) || betAmount <= 0) {
+                alert("Please enter a valid bet amount.");
+                return;
+            }
+
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "Your bet: " + selectedNumbers + " | Amount: ₱" + betAmount;
+
+            // Here you would typically send the bet to a server
+            // For this example, we'll just clear the form
+            document.getElementById("bettingForm").reset();
+            document.getElementById("confirmationBox").style.display = "none";
+        }
+    </script>
+</body>
+</html>
