@@ -3,141 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/styless.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <title>4Digits Betting Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        .betting-form {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border-radius: 5px;
-        }
-        .digit-select {
-            display: inline-block;
-            margin: 10px;
-        }
-        select {
-            font-size: 18px;
-            padding: 5px;
-        }
-        button {
-            display: block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        #result, #confirmation {
-            margin-top: 20px;
-            font-weight: bold;
-        }
-        #confirmationBox {
-            display: none;
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        #selectedNumber {
-            font-size: 24px;
-            text-align: center;
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 <body>
     <header>
-    <nav>
-        <ul>
-            <div><img src="./images/bagongpil.jpg"alt="selyo"width="40"height="42"></div>
-            <div><img src="./images/house35x35.png"alt="seal"width="40"height="42"></div>
-        </ul>
-    </nav>
+        <nav>
+            <ul>
+                <div><img src="./images/philseal.png"
+                    alt="selyo"width="35"height="37">
+                </div>
+                <div><img src="./images/house35x35.png"
+                    alt="house"width="35"height="35">
+                </div>
+            </ul>
+        </nav>
     </header>
-    <h1 class="hero">Philippine Charity Sweepstakes Office</h1>
-    <p>Instruction: Select a Number in the Form below</p>
-    <h1>4D Lotto Betting Form</h1>
-    <div class="betting-form">
-        <form id="bettingForm">
-            <div class="digit-select">
-                <label for="digit1">1st Digit:</label>
-                <select id="digit1" name="digit1">
-                    <option value="">Select</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                </select>
+    <!-- main section-->
+     <main>
+        <section class="hero">
+            <div class="hero-container">
+                <div class="hero-1"><a href="index.html">
+                    <img src="./images/pcsoicon.png" 
+                    alt="pcsoicon"width="110"height="110">
+                </a>
             </div>
-            <div class="digit-select">
-                <label for="digit2">2nd Digit:</label>
-                <select id="digit2" name="digit2">
-                    <option value="">Select</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                </select>
+            <div class="hero-2">
+                <div>Republic of the Philippines</div>
+                <div>Office of the President</div>
+                <div class="hero-2-title">Philippine Charity Sweepstakes Office</div>
             </div>
-            <div class="digit-select">
-                <label for="digit3">3rd Digit:</label>
-                <select id="digit3" name="digit3">
-                    <option value="">Select</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                </select>
+            <div>
+
             </div>
-            <div class="digit-select">
-                <label for="digit4">4th Digit:</label>
-                <select id="digit4" name="digit4">
-                    <option value="">Select</option>
-                    <option value="0">0</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                </select>
-            </div>
-            <button type="button" onclick="showConfirmation()">Confirm Numbers</button>
+        </div>
+    </section>
+    <div class="instruc">
+            <div class="ins">Instruction: </div>
+            <div>Select Number in the choices</div>
+            <div>Click "Confirm to proceed"</div>
+            <div>Enter your bet amount</div>
+            <div>Click "Place bet to confirm"</div>
+    </div>
+        <h1 class="hero-bet">4D Lotto Betting Form</h1>
+        <div class="betting-form">
+            <form id="bettingForm">
+                <div class="digit-select">
+                    <label for="digit1">1st Digit:</label>
+                    <select id="digit1" name="digit1">
+                        <option value="">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div class="digit-select">
+                    <label for="digit2">2nd Digit:</label>
+                    <select id="digit2" name="digit2">
+                        <option value="">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div class="digit-select">
+                    <label for="digit3">3rd Digit:</label>
+                    <select id="digit3" name="digit3">
+                        <option value="">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <div class="digit-select">
+                    <label for="digit4">4th Digit:</label>
+                    <select id="digit4" name="digit4">
+                        <option value="">Select</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                    </select>
+                </div>
+                <button type="button" onclick="showConfirmation()">Confirm Numbers</button>
+            </main>
         </form>
         <div id="confirmationBox">
             <div id="selectedNumber"></div>
